@@ -73,3 +73,53 @@ for l,n in zip(letters,numbers):
     print(l,n)
 comb = list(zip(letters,numbers,'Hi')) # stops at the shortest iterable
 print(comb)
+print('\n------------------MAP()----------------------------\n')
+
+# map()
+# map() applies a function to every item in an iterable and returns the result.
+# “Take each value → apply logic → return transformed values”
+# syntax - map(function, iterable)
+# clean and easiest way to do data transformations
+letters = ['a','b','c']
+print(map(str.upper,letters)) # iterator object
+print(list(map(str.upper,letters)))
+
+print('\n------------------MAP()----------------------------\n')
+
+numbers = ['1','2','3'] # num as string
+print(list(map(int,numbers))) #numbers
+
+print('\n------------------MAP()----------------------------\n')
+# remove whitespace
+
+names = [' Alphy ','Daisy  ','  Joy']
+print(list(map(str.strip,names)))
+
+print('\n------------------MAP()----------------------------\n')
+names = ['Alphy','Daisy','Joy']
+for name in map(str.upper,names):
+    print(name)
+    print(type(name))
+
+print('\n------------------FILTER()----------------------------\n')
+
+# filter()
+# filter() keeps only the values that satisfy a condition.
+# “Check each item → keep it OR discard it”
+# filter(function, iterable)
+# returns a iterator object
+# perfect for cleaning up data
+
+# remove invalid data
+names = ['Alphy',"",'Daisy',None,'Joy',False]
+print(list(filter(None,names))) # None removes all the falsy values
+print(list(filter(bool,names))) # bool also removes all the falsy values
+print('\n------------------FILTER()----------------------------\n')
+
+# keep only alphabets
+items = ['sql','123','python','']
+print(list(filter(str.isalpha,items)))
+print('\n------------------FILTER()----------------------------\n')
+items = ['sql','123','python','']
+for item in filter(str.isalpha,items):
+    print(item)
