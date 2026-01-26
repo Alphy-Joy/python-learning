@@ -45,6 +45,14 @@ print('\n----------------------------------------------\n')
 letters = ['a','','c'] # iterables
 for index,value in enumerate(letters):
     print(index,value) # find bad value
+
+#Find index of invalid values
+ages = [25, -3, 30, -1, 40]
+
+for i, age in enumerate(ages):
+    if age < 0:
+        print(f"❌ Invalid age at index {i}: {age}")
+
 print('\n------------------REVERSED()----------------------------\n')
 
 # reversed()
@@ -73,6 +81,49 @@ for l,n in zip(letters,numbers):
     print(l,n)
 comb = list(zip(letters,numbers,'Hi')) # stops at the shortest iterable
 print(comb)
+
+print('\n------------------ZIP() with range() ----------------------------\n')
+
+# zip() with range()
+for index, value in zip(range(1, 6), ['a','b','c','d','e']):
+    print(index, value)
+print('\n------------------ZIP()----------------------------\n')
+
+emails = ['a@gmail.com', 'b@yahoocom']
+statuses = ['valid', 'invalid']
+
+for email, status in zip(emails, statuses):
+    if status == 'invalid':
+        print(f"❌ Invalid email: {email}")
+print('\n------------------Nested ZIP()----------------------------\n')
+
+# Nested zip (ADVANCED)
+countries = ['US','IN']
+cities = [['NY','LA'], ['Delhi','Mumbai']]
+
+for country, city_list in zip(countries, cities):
+    for city in city_list:
+        print(country, city)
+print('\n------------------ZIP()----------------------------\n')
+# Compare expected vs actual
+expected = [10,20,30]
+actual = [10,22,30]
+
+for e,a in zip(expected, actual):
+    if e != a:
+        print("Mismatch found")
+        break
+
+print('\n------------------UNZIP() ----------------------------\n')
+
+# unzip() – Reverse zip (IMPORTANT)
+pairs = [('a',1), ('b',2), ('c',3)]
+
+letters, numbers = zip(*pairs)
+
+print(letters)
+print(numbers)
+
 print('\n------------------MAP()----------------------------\n')
 
 # map()
@@ -83,6 +134,7 @@ print('\n------------------MAP()----------------------------\n')
 letters = ['a','b','c']
 print(map(str.upper,letters)) # iterator object
 print(list(map(str.upper,letters)))
+
 
 print('\n------------------MAP()----------------------------\n')
 
