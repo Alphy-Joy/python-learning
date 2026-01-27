@@ -172,6 +172,8 @@ print('\n------------------FILTER()----------------------------\n')
 items = ['sql','123','python','']
 print(list(filter(str.isalpha,items)))
 print('\n------------------FILTER()----------------------------\n')
+# filter() returns an iterator, and for loops are designed to consume iterators directly. 
+# Converting to a list is unnecessary unless we need to store or reuse the values.
 items = ['sql','123','python','']
 for item in filter(str.isalpha,items):
     print(item)
