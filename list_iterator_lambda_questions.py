@@ -15,7 +15,7 @@ print('\n----------------------------------------------\n')
 # 👉 Identify positions where status ≥ 400.
 statuses = [200, 404, 500, 201, 403]
 invalid = list(
-    filter(lambda x:x[1] >= 400 ,enumerate(statuses)) # here x = (1, 404) - a tuple
+    filter(lambda x:x[1] >= 400 ,enumerate(statuses)) # here x = (1, 404) - a tuple,x[0] = 1,2,3,4,5 and x[1] = 404,500,403 etc for each iteration
     )
 print(invalid)
 # 3. Normalize Usernames
